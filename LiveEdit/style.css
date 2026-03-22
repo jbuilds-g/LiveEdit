@@ -1,0 +1,94 @@
+/* Core Page Indication */
+body.jbuilds-edit-active {
+  outline: 4px solid #3498db !important;
+  outline-offset: -4px !important;
+}
+
+/* OLED-style HUD Notification */
+#jbuilds-liveedit-hud {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  background-color: #080808 !important;
+  color: #E0E0E0 !important;
+  border: 1px solid #333333 !important;
+  border-radius: 8px !important;
+  padding: 16px 20px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  z-index: 2147483647 !important; 
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 12px rgba(52, 152, 219, 0.2) inset !important;
+  pointer-events: auto !important; /* Changed to auto so we can click the close button */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+#jbuilds-liveedit-hud.jb-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.jb-hud-header {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid #222222 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.jb-hud-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.jb-hud-header span {
+  background-color: #3498db !important;
+  color: #fff !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-weight: bold !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* The New Close Button */
+.jb-hud-close {
+  color: #888888 !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  transition: color 0.2s ease !important;
+  padding: 0 4px !important;
+}
+
+.jb-hud-close:hover {
+  color: #e74c3c !important; /* Subtle red on hover to indicate closing */
+}
+
+.jb-hud-body p {
+  margin: 4px 0 !important;
+  padding: 0 !important;
+  color: #AAAAAA !important;
+}
+
+.jb-hud-body strong {
+  color: #FFFFFF !important;
+}
+
+/* Hover indication when holding modifier keys */
+body.jbuilds-edit-active *:hover {
+  cursor: text;
+}
+
+body.jbuilds-edit-active img:hover {
+  cursor: crosshair !important;
+}

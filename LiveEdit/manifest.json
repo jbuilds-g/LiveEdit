@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "LiveEdit",
+  "version": "1.0.0",
+  "description": "Turn any website into a sandbox. Edit text, swap images, and delete elements live.",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Toggle LiveEdit"
+  }
+}
